@@ -35,13 +35,13 @@
     "isolatedModules": true,
     "baseUrl": ".",
     "paths": {
-      "apis": ["./src/apis"],
-      "store": ["./src/store"],
-      "components": ["./src/components"],
-      "assets": ["./src/assets"],
-      "hooks": ["./src/hooks"],
-      "utils": ["./src/utils"],
-      "types": ["./src/types"]
+      "apis/*": ["./src/apis/*"],
+      "store/*": ["./src/store/*"],
+      "components/*": ["./src/components/*"],
+      "hooks/*": ["./src/hooks/*"],
+      "assets/*": ["./src/assets/*"],
+      "utils/*": ["./src/utils/*"],
+      "types/*": ["./src/types/*"]
     }
   },
   "exclude": ["./dist/**/*", "./node_modules/**/*"],
