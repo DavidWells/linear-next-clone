@@ -24,7 +24,7 @@
     "declaration": true,
     "sourceMap": true,
 
-    "esModuleInterop": false,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "allowJs": false,
     "skipLibCheck": true,
