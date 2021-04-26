@@ -6,15 +6,16 @@
     "resolveJsonModule": true,
     "removeComments": true,
     "preserveConstEnums": true,
-    "strict": true,
-    "alwaysStrict": true,
-    "strictNullChecks": true,
+    "strict": false,
+    "alwaysStrict": false,
+    "strictNullChecks": false,
+    "suppressImplicitAnyIndexErrors": true,
 
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noImplicitAny": false,
+    "noImplicitReturns": false,
+    "noImplicitThis": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
     "allowUnreachableCode": false,
     "noFallthroughCasesInSwitch": true,
 
@@ -23,7 +24,7 @@
     "declaration": true,
     "sourceMap": true,
 
-    "esModuleInterop": true,
+    "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "allowJs": false,
     "skipLibCheck": true,
@@ -31,8 +32,18 @@
 
     "jsx": "preserve",
     "noEmit": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "baseUrl": ".",
+    "paths": {
+      "apis": ["./src/apis"],
+      "store": ["./src/store"],
+      "components": ["./src/components"],
+      "assets": ["./src/assets"],
+      "hooks": ["./src/hooks"],
+      "utils": ["./src/utils"],
+      "types": ["./src/types"]
+    }
   },
   "exclude": ["./dist/**/*", "./node_modules/**/*"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/types/custom.d.ts"]
 }

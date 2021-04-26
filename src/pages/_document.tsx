@@ -1,8 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import Document, {
-  Html, Head, Main, NextScript,
-} from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 class MyDocument extends Document {
   render() {
@@ -12,10 +10,11 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <div id="root-modal" />
         </body>
       </Html>
-    );
+    )
   }
 }
 
-export default MyDocument;
+export default MyDocument

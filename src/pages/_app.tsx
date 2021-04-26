@@ -1,10 +1,23 @@
-import React from 'react';
+import { AppProps } from 'next/app'
+import 'animate.css/animate.min.css'
+import 'react-toastify/dist/ReactToastify.css'
+import '../styles/main.css'
 
-import { AppProps } from 'next/app';
+interface SafeHydrateProps {
+  children: JSX.Element
+}
 
-import '../styles/main.css';
+function SafeHydrate({ children }: SafeHydrateProps) {
+  // Must be a div, can't be a fragment 😑🤦‍♂️
+  return <div suppressHydrationWarning>{typeof document === 'undefined' ? null : children}</div>
+}
 
-// eslint-disable-next-line react/jsx-props-no-spreading
-const MyApp = ({ Component, pageProps }: AppProps) => <Component {...pageProps} />;
+function App({ Component, pageProps }: AppProps) {
+  return (
+    <SafeHydrate>
+      <Component {...pageProps} />
+    </SafeHydrate>
+  )
+}
 
-export default MyApp;
+export default App
