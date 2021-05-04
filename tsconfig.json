@@ -35,7 +35,9 @@
     "isolatedModules": true,
     "baseUrl": ".",
     "paths": {
+      "apis": ["./src/apis"],
       "apis/*": ["./src/apis/*"],
+      "store": ["./src/store"],
       "store/*": ["./src/store/*"],
       "components/*": ["./src/components/*"],
       "hooks/*": ["./src/hooks/*"],

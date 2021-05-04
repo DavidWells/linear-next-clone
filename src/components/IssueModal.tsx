@@ -1,3 +1,4 @@
+/* @ts-ignore */
 import React, { useState } from 'react'
 
 import AttachmentIcon from 'assets/icons/attachment.svg'
@@ -50,18 +51,19 @@ export default function IssueModal({ isOpen, onDismiss }: Props) {
   const dispatch = useDispatch<AppDispatch>()
 
   const handleSubmit = () => {
-    if (title == '') {
+    if (title === '') {
       showWarning('Please enter a title before submiting', 'Title required')
       return
     }
     dispatch(
+      /* @ts-ignore */
       createIssue({
         title,
         id: undefined,
         priority,
         status,
         description,
-      })
+      }),
     )
 
     // clear state
@@ -106,11 +108,11 @@ export default function IssueModal({ isOpen, onDismiss }: Props) {
         <div className="flex items-center w-full mt-1.5 px-4">
           <StatusMenu
             id="status-menu"
-            button={
+            button={(
               <button className="flex items-center justify-center w-6 h-6 border-none rounded focus:outline-none hover:bg-gray-100">
                 <StatusIcon status={status} />
               </button>
-            }
+            )}
             onSelect={(st) => {
               setStatus(st)
             }}
@@ -138,12 +140,12 @@ export default function IssueModal({ isOpen, onDismiss }: Props) {
       <div className="flex items-center px-4 pb-3 mt-1 border-b border-gray-200">
         <PriorityMenu
           id="priority-menu"
-          button={
+          button={(
             <button className="inline-flex items-center h-6 px-2 text-gray-500 bg-gray-200 border-none rounded focus:outline-none hover:bg-gray-100 hover:text-gray-700">
               <PriorityIcon priority={priority} className="mr-0.5" />
               <span>{getPriorityString(priority)}</span>
             </button>
-          }
+          )}
           onSelect={(val) => setPriority(val)}
         />
         <button className="inline-flex items-center h-6 px-2 ml-2 text-gray-500 bg-gray-200 border-none rounded focus:outline-none hover:bg-gray-100 hover:text-gray-700">
@@ -152,12 +154,12 @@ export default function IssueModal({ isOpen, onDismiss }: Props) {
         </button>
         <LabelMenu
           id="label-menu"
-          button={
+          button={(
             <button className="inline-flex items-center h-6 px-2 ml-2 text-gray-500 bg-gray-200 border-none rounded focus:outline-none hover:bg-gray-100 hover:text-gray-700">
               <LabelIcon className="w-3.5 h-3.5 ml-2 mr-0.5" />
               <span>Label</span>
             </button>
-          }
+          )}
         />
       </div>
       {/* Footer */}
