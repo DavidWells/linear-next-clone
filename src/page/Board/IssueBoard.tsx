@@ -22,8 +22,8 @@ export default function IssueBoard() {
     provided: ResponderProvided,
   ) => {
     if (!source || !destination) return
-    /* @ts-ignore */
     dispatch(
+      /* @ts-ignore */
       updateIssueStatusAndPos(
         '',
         source.droppableId,
